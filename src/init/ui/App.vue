@@ -1,5 +1,7 @@
 <template>
-  <h1 class="text-red-500">Title</h1>
+  <Main />
 </template>
 
-<script setup></script>
+<script setup>
+import { Main } from "@/pages";
+</script>
