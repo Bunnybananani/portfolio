@@ -1,10 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
 
-@layer theme {}
+@theme {
+  --font-albertsans: "AlbertSans", sans-serif;
 
-@layer base {}
+  --index: calc(1vw + 1vh);
 
-@layer components {}
+  --color-light: #FCFCF6;
+  --color-dark: #1A1919;
+
+}
+
+@layer base {
+
+  button {
+    cursor: pointer;
+  }
+}
+
+@layer components {
+  .text-button {
+    @apply font-semibold text-xl sm:text-3xl uppercase transition-opacity hover:opacity-60 active:opacity-60;
+  }
+}
 
 @layer utilities {}
