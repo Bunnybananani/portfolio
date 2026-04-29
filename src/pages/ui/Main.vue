@@ -3,9 +3,10 @@
     <HeroSection />
     <PromoSection />
     <AboutSection />
+    <SliderSection />
   </main>
 </template>
 
 <script setup>
-import { AboutSection, HeroSection, PromoSection } from "@/init/sections";
+import { AboutSection, HeroSection, PromoSection, SliderSection } from "@/init/sections";
 </script>

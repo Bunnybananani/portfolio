@@ -29,7 +29,8 @@
 </template>
 
 <script setup>
+import { DefaultButton } from "@/shared/components/button";
+
 import promoSectionImg1 from "@/shared/assets/main/promo-section-1.png";
 import promoSectionImg2 from "@/shared/assets/main/promo-section-2.png";
-import { DefaultButton } from "@/shared/components/button";
 </script>
