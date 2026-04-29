@@ -4,7 +4,7 @@
       <img :src="promoSectionImg1" alt="" />
     </div>
     <div class="py-4 md:py-6 flex flex-col gap-y-6 md:gap-y-12">
-      <h2 class="promo-section-title font-medium italic">
+      <h2 class="section-title font-medium italic">
         SPECIALIZING IN FASHION AND PORTRAIT&nbsp;PHOTOGRAPHY, I&nbsp;BRING&nbsp;2+&nbsp;YEARS&nbsp;OF&nbsp;EXPERIENCE
         WORKING WITH CLOTHING&nbsp;BRANDS.
       </h2>
