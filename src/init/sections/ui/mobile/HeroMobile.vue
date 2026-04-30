@@ -4,15 +4,15 @@
     :style="{ backgroundImage: `url(${heroImg})` }"
   >
     <h1
-      class="absolute top-1/5 left-1/2 -translate-x-1/2 grid place-items-center hero-button-span text-dark opacity-70 leading-none"
+      class="absolute top-1/5 left-1/2 -translate-x-1/2 grid place-items-center text-center text-dark opacity-70 leading-none"
     >
-      <span class="font-semibold">FASHION AND PORTRAIT</span>
+      <span class="font-semibold">FASHION&nbsp;AND&nbsp;PORTRAIT</span>
       <span class="font-bold">PHOTOGRAPHER</span>
     </h1>
-    <button class="text-button hero-button-text absolute top-3 left-3">omniia</button>
-    <button class="text-button hero-button-text absolute top-3 right-3">about</button>
-    <button class="text-button hero-button-text absolute bottom-3 left-3">portfolio</button>
-    <button class="text-button hero-button-text absolute bottom-3 right-3">contact</button>
+    <button class="text-button absolute top-3 left-3 text-lg">omniia</button>
+    <button class="text-button absolute top-3 right-3 text-lg">about</button>
+    <button class="text-button absolute bottom-3 left-3 text-lg">portfolio</button>
+    <button class="text-button absolute bottom-3 right-3 text-lg">contact</button>
   </header>
 </template>
 

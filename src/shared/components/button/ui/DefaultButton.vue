@@ -1,8 +1,5 @@
 <template>
-  <button
-    class=""
-    :class="['text-xl font-medium transition-opacity hover:opacity-70 active:opacity-70', btnTheme, btnSize]"
-  >
+  <button :class="['font-medium transition-opacity hover:opacity-70 active:opacity-70', btnTheme, btnSize]">
     {{ label }}
   </button>
 </template>
@@ -20,7 +17,8 @@ const btnTheme = {
 }[variant];
 
 const btnSize = {
-  dark: "py-3.5 px-10.5",
-  light: "py-3.5 px-10.5 md:py-6 md:px-16",
-}[variant];
+  dark: "py-3.5 px-10.5 text-xl",
+  light: "py-3.5 px-10.5 md:py-6 md:px-16 text-xl",
+  mobileDark: "py-1 px-2 text-xs",
+}[size];
 </script>

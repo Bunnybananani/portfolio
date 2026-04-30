@@ -9,6 +9,7 @@
   --color-light: #FCFCF6;
   --color-dark: #1A1919;
 
+  --text-xxs: 0.625rem;
 }
 
 @layer base {

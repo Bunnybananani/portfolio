@@ -1,5 +1,5 @@
 <template>
-  <section class="px-4 md:px-6 grid lg:grid-cols-2 justify-between gap-x-4">
+  <section class="px-4 md:px-6 lg:grid-cols-2 justify-between gap-x-4">
     <div class="hidden lg:block">
       <img :src="promoSectionImg1" alt="" />
     </div>
