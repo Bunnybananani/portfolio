@@ -3,3 +3,4 @@ export { default as PromoSection } from "./ui/PromoSection.vue";
 export { default as AboutSection } from "./ui/AboutSection.vue";
 export { default as SliderSection } from "./ui/SliderSection.vue";
 export { default as PortfolioSection } from "./ui/PortfolioSection.vue";
+export { default as FooterSection } from "./ui/FooterSection.vue";

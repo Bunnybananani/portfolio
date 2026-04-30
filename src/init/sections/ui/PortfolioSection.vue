@@ -37,7 +37,7 @@
           <img :src="portraitImg5" alt="" />
         </div>
       </article>
-      <article class="flex flex-col-reverse md:flex-col">
+      <article class="flex flex-col-reverse md:flex-col items-center">
         <div class="flex gap-x-4">
           <div class="flex flex-col">
             <img :src="portraitImg1" alt="" />

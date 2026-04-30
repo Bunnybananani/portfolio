@@ -1,6 +1,9 @@
 <template>
   <section class="px-4 md:px-6 flex flex-col">
-    <h2 class="about-section-title text-center font-bold">FASHION AND PORTRAIT</h2>
+    <h2 class="about-section-title flex flex-col text-center font-bold">
+      <span>FASHION AND</span>
+      <span>PORTRAIT</span>
+    </h2>
     <div class="flex gap-8">
       <div class="hidden lg:flex shrink-0 items-end">
         <img :src="aboutSectionImg1" alt="" />

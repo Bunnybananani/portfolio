@@ -46,7 +46,7 @@
   }
 
   .about-section-title {
-    font-size: max(1.2rem, calc(var(--index)*5));
+    font-size: max(1.2rem, calc(var(--index)*5.2));
     @apply leading-tight;
   }
 
@@ -64,6 +64,10 @@
 
   .portfolio-section-subtle {
     font-size: max(1.125rem, calc(var(--index)*1.3));
+  }
+
+  .footer-title {
+    font-size: max(1.25rem, calc(var(--index)*3.4));
   }
 
   .section-title {

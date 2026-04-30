@@ -5,9 +5,17 @@
     <AboutSection />
     <SliderSection />
     <PortfolioSection />
+    <FooterSection />
   </main>
 </template>
 
 <script setup>
-import { AboutSection, HeroSection, PortfolioSection, PromoSection, SliderSection } from "@/init/sections";
+import {
+  AboutSection,
+  FooterSection,
+  HeroSection,
+  PortfolioSection,
+  PromoSection,
+  SliderSection,
+} from "@/init/sections";
 </script>
