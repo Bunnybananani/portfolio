@@ -7,7 +7,7 @@
       <span>Let’s Collaborate on</span>
       <span>Your Next Big Idea.</span>
     </h3>
-    <DefaultButton label="CONTACT NOW" variant="light" />
+    <DefaultButton label="CONTACT NOW" variant="light" size="wide" />
   </footer>
 </template>
 

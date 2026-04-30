@@ -10,12 +10,5 @@
 </template>
 
 <script setup>
-import {
-  AboutSection,
-  FooterSection,
-  HeroSection,
-  PortfolioSection,
-  PromoSection,
-  SliderSection,
-} from "@/init/sections";
+import { AboutSection, FooterSection, HeroSection, PortfolioSection, PromoSection, SliderSection } from "@/sections";
 </script>

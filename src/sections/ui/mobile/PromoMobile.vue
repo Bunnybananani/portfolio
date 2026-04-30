@@ -20,7 +20,7 @@
             Photography is how I capture the beauty of the world around us. I’m just here to share that vision through
             my lens. Let’s create something together
           </p>
-          <DefaultButton class="mb-6" label="Get Started" size="mobileDark" />
+          <DefaultButton class="mb-6" label="Get Started" size="small" />
           <img :src="promoSectionImg2" alt="" />
         </div>
       </div>
