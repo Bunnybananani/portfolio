@@ -1,7 +1,7 @@
 <template>
-  <Main />
+  <RouterView />
 </template>
 
 <script setup>
-import { Main } from "@/pages";
+import { RouterView } from "vue-router";
 </script>
