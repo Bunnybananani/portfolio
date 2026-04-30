@@ -1,6 +1,6 @@
 <template>
   <header
-    class="relative h-svh bg-no-repeat bg-center bg-cover text-light"
+    class="relative h-svh bg-no-repeat bg-top-left bg-cover shadow text-light"
     :style="{ backgroundImage: `url(${heroImg})` }"
   >
     <h1 class="absolute left-1/6 top-1/2 -translate-y-1/2 grid place-items-center hero-button-span opacity-70">

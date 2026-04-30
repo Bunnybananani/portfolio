@@ -34,11 +34,11 @@
 
 @layer utilities {
   .hero-button-text {
-    font-size: max(1.25rem, calc(var(--index)*1.08))
+    font-size: max(1.25rem, calc(var(--index)*1.04))
   }
 
   .hero-button-span {
-    font-size: max(0.85rem, calc(var(--index)*0.94))
+    font-size: max(0.85rem, calc(var(--index)*0.96))
   }
 
   .promo-section-info {
