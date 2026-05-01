@@ -1,5 +1,5 @@
 <template>
-  <section class="px-4 md:px-6 flex flex-col">
+  <section class="px-4 md:px-6 flex-col">
     <h2 class="about-section-title flex flex-col text-center font-bold">
       <span>FASHION AND</span>
       <span>PORTRAIT</span>

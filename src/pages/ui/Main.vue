@@ -3,9 +3,9 @@
     <HeroSection />
     <PromoSection />
     <AboutSection />
-    <SliderSection />
-    <PortfolioSection />
-    <FooterSection />
+    <!-- <SliderSection /> -->
+    <!-- <PortfolioSection /> -->
+    <!-- <FooterSection /> -->
   </main>
 </template>
 
