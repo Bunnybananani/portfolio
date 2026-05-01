@@ -1,5 +1,5 @@
 <template>
-  <section class="pt-4 px-3">
+  <section class="py-4 px-3">
     <h2 class="mb-4 grid text-center text-4xl font-semibold uppercase">
       <span>FASHION AND</span>
       <span>PORTRAIT</span>

@@ -1,6 +1,6 @@
 <template>
-  <AboutDesktop class="hidden md:flex" />
-  <AboutMobile class="block md:hidden" />
+  <AboutDesktop class="hidden sm:flex" />
+  <AboutMobile class="block sm:hidden" />
 </template>
 
 <script setup>

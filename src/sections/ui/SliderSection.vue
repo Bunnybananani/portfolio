@@ -1,5 +1,5 @@
 <template>
-  <SliderDesktop />
+  <SliderDesktop class="hidden sm:block" />
 </template>
 
 <script setup>

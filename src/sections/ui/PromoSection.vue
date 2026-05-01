@@ -1,6 +1,6 @@
 <template>
-  <PromoDesktop class="hidden md:grid" />
-  <PromoMobile class="block md:hidden" />
+  <PromoDesktop class="hidden sm:grid" />
+  <PromoMobile class="block sm:hidden" />
 </template>
 
 <script setup>
