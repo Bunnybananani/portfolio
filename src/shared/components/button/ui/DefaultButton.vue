@@ -20,5 +20,6 @@ const btnSize = {
   default: "py-3.5 px-10.5 text-xl",
   wide: "py-3.5 px-10.5 md:py-6 md:px-16 text-xl",
   small: "py-1 px-2 text-xs",
+  wideSmall: "py-1.5 px-3 text-xs",
 }[size];
 </script>
