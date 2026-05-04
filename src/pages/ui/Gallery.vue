@@ -1,5 +1,5 @@
 <template>
-  <main class="font-albertsans p-6 min-h-svh space-y-2 bg-light">
+  <main class="font-albertsans p-2 md:p-6 min-h-svh space-y-2 bg-light">
     <header class="space-y-4">
       <h1 class="text-2xl font-bold">Gallery</h1>
       <nav class="flex items-center flex-wrap gap-2">
@@ -15,11 +15,16 @@
         :columnWidth="240"
         :minColumns="2"
         :maxColumns="5"
-        :gap="10"
+        :gap="8"
       >
         <template #default="{ item }">
           <div class="cursor-pointer overflow-hidden group">
-            <img :src="item.img" class="block w-full transition-transform duration-300 group-hover:scale-105" alt="" />
+            <img
+              :src="item.img"
+              class="block w-full transition-transform duration-300 group-hover:scale-105"
+              loading="lazy"
+              alt=""
+            />
           </div>
         </template>
       </MasonryWall>
@@ -33,6 +38,7 @@ import { useRoute, useRouter } from "vue-router";
 import { MasonryWall } from "@yeger/vue-masonry-wall";
 import { GALLERY_TYPES } from "@/entities/gallery";
 import { GalleryRadio } from "@/shared/components/radio";
+import { shuffle } from "@/shared/libs";
 
 import portraitImg1 from "@/shared/assets/main/portrait-1.png";
 import portraitImg2 from "@/shared/assets/main/portrait-2.png";
@@ -42,6 +48,17 @@ import portraitImg5 from "@/shared/assets/main/portrait-5.png";
 import portraitImg6 from "@/shared/assets/main/portrait-6.png";
 import portraitImg7 from "@/shared/assets/main/portrait-7.png";
 
+const brandImages = shuffle(
+  Object.values(
+    import.meta.glob("@/shared/assets/brands/*.{png,jpg,jpeg,webp}", {
+      eager: true,
+      import: "default",
+    }),
+  ),
+).map((img) => ({
+  img,
+}));
+
 const router = useRouter();
 const route = useRoute();
 
@@ -49,50 +66,7 @@ const activeType = ref(route.query.type || GALLERY_TYPES.brands);
 
 const currentGallery = computed(() => {
   return {
-    [GALLERY_TYPES.brands]: [
-      {
-        img: portraitImg1,
-      },
-      {
-        img: portraitImg4,
-      },
-      {
-        img: portraitImg2,
-      },
-      {
-        img: portraitImg3,
-      },
-      {
-        img: portraitImg5,
-      },
-      {
-        img: portraitImg6,
-      },
-      {
-        img: portraitImg7,
-      },
-      {
-        img: portraitImg1,
-      },
-      {
-        img: portraitImg2,
-      },
-      {
-        img: portraitImg3,
-      },
-      {
-        img: portraitImg4,
-      },
-      {
-        img: portraitImg5,
-      },
-      {
-        img: portraitImg6,
-      },
-      {
-        img: portraitImg7,
-      },
-    ],
+    [GALLERY_TYPES.brands]: brandImages,
     [GALLERY_TYPES.portraits]: [
       {
         img: portraitImg6,
