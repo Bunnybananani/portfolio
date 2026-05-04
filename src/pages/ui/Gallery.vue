@@ -19,12 +19,7 @@
       >
         <template #default="{ item }">
           <div class="cursor-pointer overflow-hidden group">
-            <img
-              :src="item.img"
-              class="block w-full transition-transform duration-300 group-hover:scale-105"
-              loading="lazy"
-              alt=""
-            />
+            <img :src="item.img" class="block w-full transition-transform duration-300 group-hover:scale-105" alt="" />
           </div>
         </template>
       </MasonryWall>
@@ -40,17 +35,31 @@ import { GALLERY_TYPES } from "@/entities/gallery";
 import { GalleryRadio } from "@/shared/components/radio";
 import { shuffle } from "@/shared/libs";
 
-import portraitImg1 from "@/shared/assets/main/portrait-1.png";
-import portraitImg2 from "@/shared/assets/main/portrait-2.png";
-import portraitImg3 from "@/shared/assets/main/portrait-3.png";
-import portraitImg4 from "@/shared/assets/main/portrait-4.png";
-import portraitImg5 from "@/shared/assets/main/portrait-5.png";
-import portraitImg6 from "@/shared/assets/main/portrait-6.png";
-import portraitImg7 from "@/shared/assets/main/portrait-7.png";
-
 const brandImages = shuffle(
   Object.values(
     import.meta.glob("@/shared/assets/brands/*.{png,jpg,jpeg,webp}", {
+      eager: true,
+      import: "default",
+    }),
+  ),
+).map((img) => ({
+  img,
+}));
+
+const portraitImages = shuffle(
+  Object.values(
+    import.meta.glob("@/shared/assets/portraits/*.{png,jpg,jpeg,webp}", {
+      eager: true,
+      import: "default",
+    }),
+  ),
+).map((img) => ({
+  img,
+}));
+
+const creativeImages = shuffle(
+  Object.values(
+    import.meta.glob("@/shared/assets/creative/*.{png,jpg,jpeg,webp}", {
       eager: true,
       import: "default",
     }),
@@ -67,70 +76,8 @@ const activeType = ref(route.query.type || GALLERY_TYPES.brands);
 const currentGallery = computed(() => {
   return {
     [GALLERY_TYPES.brands]: brandImages,
-    [GALLERY_TYPES.portraits]: [
-      {
-        img: portraitImg6,
-      },
-      {
-        img: portraitImg7,
-      },
-      {
-        img: portraitImg1,
-      },
-      {
-        img: portraitImg2,
-      },
-      {
-        img: portraitImg3,
-      },
-      {
-        img: portraitImg4,
-      },
-      {
-        img: portraitImg5,
-      },
-      {
-        img: portraitImg6,
-      },
-      {
-        img: portraitImg7,
-      },
-    ],
-    [GALLERY_TYPES.creative]: [
-      {
-        img: portraitImg2,
-      },
-      {
-        img: portraitImg3,
-      },
-      {
-        img: portraitImg4,
-      },
-      {
-        img: portraitImg5,
-      },
-      {
-        img: portraitImg6,
-      },
-      {
-        img: portraitImg7,
-      },
-      {
-        img: portraitImg3,
-      },
-      {
-        img: portraitImg5,
-      },
-      {
-        img: portraitImg6,
-      },
-      {
-        img: portraitImg7,
-      },
-      {
-        img: portraitImg1,
-      },
-    ],
+    [GALLERY_TYPES.portraits]: portraitImages,
+    [GALLERY_TYPES.creative]: creativeImages,
   }[activeType.value];
 });
 
