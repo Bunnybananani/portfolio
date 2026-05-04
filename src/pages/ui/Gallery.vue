@@ -3,9 +3,9 @@
     <header class="space-y-4">
       <h1 class="text-2xl font-bold">Gallery</h1>
       <nav class="flex items-center flex-wrap gap-2">
-        <GalleryRadio v-model="activeType" name="gallery-type" :value="GELLERY_TYPES.brands" />
-        <GalleryRadio v-model="activeType" name="gallery-type" :value="GELLERY_TYPES.portraits" />
-        <GalleryRadio v-model="activeType" name="gallery-type" :value="GELLERY_TYPES.video" />
+        <GalleryRadio v-model="activeType" name="gallery-type" :value="GALLERY_TYPES.brands" />
+        <GalleryRadio v-model="activeType" name="gallery-type" :value="GALLERY_TYPES.portraits" />
+        <GalleryRadio v-model="activeType" name="gallery-type" :value="GALLERY_TYPES.creative" />
       </nav>
     </header>
     <Transition name="gallery" mode="out-in">
@@ -28,8 +28,10 @@
 </template>
 
 <script setup>
-import { computed, ref } from "vue";
+import { computed, ref, watch } from "vue";
+import { useRoute, useRouter } from "vue-router";
 import { MasonryWall } from "@yeger/vue-masonry-wall";
+import { GALLERY_TYPES } from "@/entities/gallery";
 import { GalleryRadio } from "@/shared/components/radio";
 
 import portraitImg1 from "@/shared/assets/main/portrait-1.png";
@@ -40,17 +42,14 @@ import portraitImg5 from "@/shared/assets/main/portrait-5.png";
 import portraitImg6 from "@/shared/assets/main/portrait-6.png";
 import portraitImg7 from "@/shared/assets/main/portrait-7.png";
 
-const GELLERY_TYPES = {
-  brands: "Brands",
-  portraits: "Portraits",
-  video: "Video",
-};
+const router = useRouter();
+const route = useRoute();
 
-const activeType = ref(GELLERY_TYPES.brands);
+const activeType = ref(route.query.type || GALLERY_TYPES.brands);
 
 const currentGallery = computed(() => {
   return {
-    [GELLERY_TYPES.brands]: [
+    [GALLERY_TYPES.brands]: [
       {
         img: portraitImg1,
       },
@@ -94,7 +93,7 @@ const currentGallery = computed(() => {
         img: portraitImg7,
       },
     ],
-    [GELLERY_TYPES.portraits]: [
+    [GALLERY_TYPES.portraits]: [
       {
         img: portraitImg6,
       },
@@ -123,7 +122,7 @@ const currentGallery = computed(() => {
         img: portraitImg7,
       },
     ],
-    [GELLERY_TYPES.video]: [
+    [GALLERY_TYPES.creative]: [
       {
         img: portraitImg2,
       },
@@ -160,6 +159,15 @@ const currentGallery = computed(() => {
     ],
   }[activeType.value];
 });
+
+watch(activeType, (type) => {
+  router.replace({
+    query: {
+      ...route.query,
+      type,
+    },
+  });
+});
 </script>
 
 <style scoped>
@@ -173,6 +181,6 @@ const currentGallery = computed(() => {
 .gallery-enter-from,
 .gallery-leave-to {
   opacity: 0;
-  transform: translateY(12px);
+  transform: translateY(1rem);
 }
 </style>

@@ -19,7 +19,10 @@
             <div>
               <img :src="portraitImg4" alt="" />
               <div class="xl:pt-30 grow flex justify-start items-center">
-                <button class="flex flex-col items-start">
+                <button
+                  class="flex flex-col items-start transition-opacity hover:opacity-70"
+                  @click="openGallery(GALLERY_TYPES.brands)"
+                >
                   <ArrowShortIcon class="h-10 w-10 rotate-180" />
                   <span class="portfolio-section-subtle leading-6">FOR BRANDS</span>
                 </button>
@@ -42,7 +45,10 @@
           <div class="flex flex-col">
             <img :src="portraitImg1" alt="" />
             <div class="xl:pt-40 grow flex justify-end items-center">
-              <button class="flex flex-col items-end">
+              <button
+                class="flex flex-col items-end transition-opacity hover:opacity-70"
+                @click="openGallery(GALLERY_TYPES.portraits)"
+              >
                 <span class="portfolio-section-subtle leading-6">PORTRAITS</span>
                 <ArrowWideIcon class="h-10 w-20" />
               </button>
@@ -56,7 +62,10 @@
           <div class="flex flex-col">
             <img :src="portraitImg6" alt="" />
             <div class="grow flex justify-end items-center">
-              <button class="flex flex-col items-start md:gap-y-2 portfolio-section-subtle leading-6">
+              <button
+                class="flex flex-col items-start md:gap-y-2 portfolio-section-subtle leading-6 transition-opacity hover:opacity-70"
+                @click="openGallery(GALLERY_TYPES.creative)"
+              >
                 <span class="">CREATIVE/</span>
                 <div class="flex items-center">
                   <span>STUDIO</span>
@@ -80,6 +89,8 @@
 </template>
 
 <script setup>
+import { useRouter } from "vue-router";
+import { GALLERY_TYPES } from "@/entities/gallery";
 import { ArrowShortIcon, ArrowWideIcon } from "@/shared/components/icon";
 
 import portraitImg1 from "@/shared/assets/main/portrait-1.png";
@@ -89,4 +100,10 @@ import portraitImg4 from "@/shared/assets/main/portrait-4.png";
 import portraitImg5 from "@/shared/assets/main/portrait-5.png";
 import portraitImg6 from "@/shared/assets/main/portrait-6.png";
 import portraitImg7 from "@/shared/assets/main/portrait-7.png";
+
+const router = useRouter();
+
+const openGallery = (galleryType) => {
+  router.push({ path: "/gallery", query: { type: galleryType } });
+};
 </script>
