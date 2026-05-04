@@ -19,7 +19,13 @@
       >
         <template #default="{ item }">
           <div class="cursor-pointer overflow-hidden group">
-            <img :src="item.img" class="block w-full transition-transform duration-300 group-hover:scale-105" alt="" />
+            <img
+              :src="item.img"
+              loading="lazy"
+              decoding="async"
+              class="block w-full transition-transform duration-300 group-hover:scale-105"
+              alt=""
+            />
           </div>
         </template>
       </MasonryWall>
