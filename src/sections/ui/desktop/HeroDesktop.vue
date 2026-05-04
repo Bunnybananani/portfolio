@@ -7,13 +7,16 @@
       <span>FASHION AND PORTRAIT</span>
       <span>PHOTOGRAPHER</span>
     </h1>
-    <button class="text-button hero-button-text absolute top-8 left-8">omniia</button>
-    <button class="text-button hero-button-text absolute top-8 right-8">about</button>
-    <button class="text-button hero-button-text absolute bottom-8 left-8">portfolio</button>
-    <button class="text-button hero-button-text absolute bottom-8 right-8">contact</button>
+    <span class="font-semibold uppercase hero-button-text absolute top-8 left-8">omniia</span>
+    <a class="text-button hero-button-text absolute top-8 right-8" @click="scrollToSection('about')">about</a>
+    <a class="text-button hero-button-text absolute bottom-8 left-8" @click="scrollToSection('portfolio')">portfolio</a>
+    <button class="text-button hero-button-text absolute bottom-8 right-8" @click="openContacts">contact</button>
   </header>
 </template>
 
 <script setup>
+import { openContacts } from "@/entities/contacts";
+import { scrollToSection } from "@/shared/libs";
+
 import heroImg from "@/shared/assets/main/main-hero-1.png";
 </script>

@@ -8,12 +8,13 @@
         <span>Let’s Collaborate on</span>
         <span>Your Next Big Idea.</span>
       </h3>
-      <DefaultButton label="CONTACT NOW" variant="light" size="wideSmall" />
+      <DefaultButton label="CONTACT NOW" variant="light" size="wideSmall" @click="openContacts" />
     </div>
   </footer>
 </template>
 
 <script setup>
+import { openContacts } from "@/entities/contacts";
 import { DefaultButton } from "@/shared/components/button";
 
 import footerImg from "@/shared/assets/main/footer.png";

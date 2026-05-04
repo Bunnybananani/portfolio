@@ -1,5 +1,5 @@
 <template>
-  <section class="py-6 xl:py-20 px-4 md:px-6 flex-col gap-y-2 md:gap-y-6">
+  <section class="py-6 xl:py-16 px-4 md:px-6 flex-col gap-y-2 md:gap-y-6">
     <h2 class="about-section-title text-center font-bold">PORTFOLIO</h2>
     <div class="grid md:grid-cols-2 gap-4 lg:gap-8">
       <article>
@@ -89,8 +89,7 @@
 </template>
 
 <script setup>
-import { useRouter } from "vue-router";
-import { GALLERY_TYPES } from "@/entities/gallery";
+import { GALLERY_TYPES, useOpenGallery } from "@/entities/gallery";
 import { ArrowShortIcon, ArrowWideIcon } from "@/shared/components/icon";
 
 import portraitImg1 from "@/shared/assets/main/portrait-1.png";
@@ -101,9 +100,5 @@ import portraitImg5 from "@/shared/assets/main/portrait-5.png";
 import portraitImg6 from "@/shared/assets/main/portrait-6.png";
 import portraitImg7 from "@/shared/assets/main/portrait-7.png";
 
-const router = useRouter();
-
-const openGallery = (galleryType) => {
-  router.push({ path: "/gallery", query: { type: galleryType } });
-};
+const { openGallery } = useOpenGallery();
 </script>

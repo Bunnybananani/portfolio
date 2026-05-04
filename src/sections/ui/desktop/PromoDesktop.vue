@@ -19,7 +19,7 @@
               Photography is how I capture the beauty of the world around us. I’m just here to share that vision through
               my lens. Let’s create something together
             </p>
-            <DefaultButton label="Get Started" />
+            <DefaultButton label="Get Started" @click="openContacts" />
           </div>
           <img :src="promoSectionImg2" alt="" />
         </div>
@@ -29,6 +29,7 @@
 </template>
 
 <script setup>
+import { openContacts } from "@/entities/contacts";
 import { DefaultButton } from "@/shared/components/button";
 
 import promoSectionImg1 from "@/shared/assets/main/promo-section-1.png";

@@ -28,7 +28,10 @@
             I love sharing the beauty of this world through my lens, using light to create a&nbsp;cinematic feel. I
             believe every frame should feel real and effortless.
           </p>
-          <button class="flex items-center gap-x-3 transition-opacity hover:opacity-70 active:opacity-70">
+          <button
+            class="flex items-center gap-x-3 transition-opacity hover:opacity-70 active:opacity-70"
+            @click="openGallery(GALLERY_TYPES.brands)"
+          >
             <span class="decore-span font-medium">VIEW MORE</span>
             <ArrowShortIcon class="h-6 w-6" />
           </button>
@@ -39,8 +42,11 @@
 </template>
 
 <script setup>
+import { GALLERY_TYPES, useOpenGallery } from "@/entities/gallery";
 import { ArrowShortIcon } from "@/shared/components/icon";
 
 import aboutSectionImg1 from "@/shared/assets/main/about-section-1.png";
 import aboutSectionImg2 from "@/shared/assets/main/about-section-2.png";
+
+const { openGallery } = useOpenGallery();
 </script>

@@ -1,6 +1,8 @@
 <template>
-  <PortfolioDesktop class="hidden sm:flex" />
-  <PortfolioMobile class="flex sm:hidden" />
+  <section id="portfolio">
+    <PortfolioDesktop class="hidden sm:flex" />
+    <PortfolioMobile class="flex sm:hidden" />
+  </section>
 </template>
 
 <script setup>

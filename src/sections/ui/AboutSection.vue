@@ -1,6 +1,8 @@
 <template>
-  <AboutDesktop class="hidden sm:flex" />
-  <AboutMobile class="block sm:hidden" />
+  <section id="about">
+    <AboutDesktop class="hidden sm:flex" />
+    <AboutMobile class="block sm:hidden" />
+  </section>
 </template>
 
 <script setup>

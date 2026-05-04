@@ -75,8 +75,7 @@
 </template>
 
 <script setup>
-import { useRouter } from "vue-router";
-import { GALLERY_TYPES } from "@/entities/gallery";
+import { GALLERY_TYPES, useOpenGallery } from "@/entities/gallery";
 import { ArrowShortIcon, ArrowWideIcon } from "@/shared/components/icon";
 
 import portraitImg1 from "@/shared/assets/main/portrait-1.png";
@@ -87,9 +86,5 @@ import portraitImg5 from "@/shared/assets/main/portrait-5.png";
 import portraitImg6 from "@/shared/assets/main/portrait-6.png";
 import portraitImg7 from "@/shared/assets/main/portrait-7.png";
 
-const router = useRouter();
-
-const openGallery = (galleryType) => {
-  router.push({ path: "/gallery", query: { type: galleryType } });
-};
+const { openGallery } = useOpenGallery();
 </script>
