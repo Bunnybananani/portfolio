@@ -34,6 +34,11 @@
 }
 
 @layer utilities {
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+
+
   .hero-button-text {
     font-size: max(1.25rem, calc(var(--index)*1.04))
   }
@@ -83,7 +88,5 @@
   .decore-span {
     font-size: max(0.875rem, calc(var(--index)*0.7))
   }
-
-
 
 }
