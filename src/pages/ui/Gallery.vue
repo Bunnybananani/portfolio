@@ -21,7 +21,7 @@
         :gap="8"
       >
         <template #default="{ item }">
-          <div class="cursor-pointer overflow-hidden group">
+          <div class="cursor-pointer overflow-hidden group" @click="openLightbox(item.img)">
             <img
               :src="item.img"
               :loading="item.priority ? 'eager' : 'lazy'"
@@ -36,12 +36,14 @@
       </MasonryWall>
     </Transition>
   </main>
+  <Lightbox :selectedImage="selectedImage" @close="closeLightbox" />
 </template>
 
 <script setup>
 import { computed, ref, watch } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import { MasonryWall } from "@yeger/vue-masonry-wall";
+import { Lightbox, useLightbox } from "@/shared/components/lightbox";
 import { GALLERY_TYPES } from "@/entities/gallery";
 import { GalleryRadio } from "@/shared/components/radio";
 import { shuffle } from "@/shared/libs";
@@ -76,6 +78,8 @@ const creativeImages = makeGallery(
 
 const router = useRouter();
 const route = useRoute();
+
+const { selectedImage, openLightbox, closeLightbox } = useLightbox();
 
 const activeType = ref(route.query.type || GALLERY_TYPES.brands);
 
