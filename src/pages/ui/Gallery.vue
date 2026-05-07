@@ -24,10 +24,12 @@
           <div class="cursor-pointer overflow-hidden group">
             <img
               :src="item.img"
-              loading="lazy"
+              :loading="item.priority ? 'eager' : 'lazy'"
+              :fetchpriority="item.priority ? 'high' : 'auto'"
               decoding="async"
-              class="block w-full transition-transform duration-300 group-hover:scale-105"
+              class="gallery-image block w-full opacity-0 transition-all duration-300 group-hover:scale-105"
               alt=""
+              @load="$event.target.classList.add('is-loaded')"
             />
           </div>
         </template>
@@ -45,38 +47,32 @@ import { GalleryRadio } from "@/shared/components/radio";
 import { shuffle } from "@/shared/libs";
 import { ArrowShortIcon } from "@/shared/components/icon";
 
-const brandImages = shuffle(
-  Object.values(
-    import.meta.glob("@/shared/assets/brands/*.{png,jpg,jpeg,webp}", {
-      eager: true,
-      import: "default",
-    }),
-  ),
-).map((img) => ({
-  img,
-}));
+const makeGallery = (modules) =>
+  shuffle(Object.values(modules)).map((img, index) => ({
+    img,
+    priority: index < 10,
+  }));
 
-const portraitImages = shuffle(
-  Object.values(
-    import.meta.glob("@/shared/assets/portraits/*.{png,jpg,jpeg,webp}", {
-      eager: true,
-      import: "default",
-    }),
-  ),
-).map((img) => ({
-  img,
-}));
+const brandImages = makeGallery(
+  import.meta.glob("@/shared/assets/brands/*.{png,jpg,jpeg,webp}", {
+    eager: true,
+    import: "default",
+  }),
+);
 
-const creativeImages = shuffle(
-  Object.values(
-    import.meta.glob("@/shared/assets/creative/*.{png,jpg,jpeg,webp}", {
-      eager: true,
-      import: "default",
-    }),
-  ),
-).map((img) => ({
-  img,
-}));
+const portraitImages = makeGallery(
+  import.meta.glob("@/shared/assets/portraits/*.{png,jpg,jpeg,webp}", {
+    eager: true,
+    import: "default",
+  }),
+);
+
+const creativeImages = makeGallery(
+  import.meta.glob("@/shared/assets/creative/*.{png,jpg,jpeg,webp}", {
+    eager: true,
+    import: "default",
+  }),
+);
 
 const router = useRouter();
 const route = useRoute();
@@ -113,5 +109,9 @@ watch(activeType, (type) => {
 .gallery-leave-to {
   opacity: 0;
   transform: translateY(1rem);
+}
+
+.gallery-image.is-loaded {
+  opacity: 1;
 }
 </style>
