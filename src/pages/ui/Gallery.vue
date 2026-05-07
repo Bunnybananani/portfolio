@@ -1,7 +1,10 @@
 <template>
   <main class="font-albertsans p-2 md:p-6 min-h-svh space-y-2 bg-light">
     <header class="space-y-4">
-      <h1 class="text-2xl font-bold">Gallery</h1>
+      <button class="flex items-center gap-x-2 transition-opacity hover:opacity-70" @click="router.push('/')">
+        <ArrowShortIcon class="h-10 w-10 rotate-180" />
+        <h1 class="text-2xl font-bold">Gallery</h1>
+      </button>
       <nav class="flex items-center flex-wrap gap-2">
         <GalleryRadio v-model="activeType" name="gallery-type" :value="GALLERY_TYPES.brands" />
         <GalleryRadio v-model="activeType" name="gallery-type" :value="GALLERY_TYPES.portraits" />
@@ -40,6 +43,7 @@ import { MasonryWall } from "@yeger/vue-masonry-wall";
 import { GALLERY_TYPES } from "@/entities/gallery";
 import { GalleryRadio } from "@/shared/components/radio";
 import { shuffle } from "@/shared/libs";
+import { ArrowShortIcon } from "@/shared/components/icon";
 
 const brandImages = shuffle(
   Object.values(
