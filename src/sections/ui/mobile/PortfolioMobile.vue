@@ -5,15 +5,15 @@
       With 2+ years of experience in SMM and brand content, I help brands and individuals find their unique visual
       voice. I believe in authentic light, cinematic frames, and content that feels real.
     </p>
-    <div class="flex gap-x-4">
+    <div class="flex gap-x-4" @click="openGallery(GALLERY_TYPES.portraits)">
       <div class="flex-3/5 grid grid-cols-2">
         <div></div>
         <div class="flex flex-col gap-y-2">
           <img :src="portraitImg1" alt="" />
-          <button class="flex flex-col items-end" @click="openGallery(GALLERY_TYPES.portraits)">
+          <div class="flex flex-col items-end">
             <span class="text-sm uppercase">PORTRAITS</span>
             <ArrowWideIcon class="h-4 w-8" />
-          </button>
+          </div>
         </div>
       </div>
       <div class="flex-2/5">
@@ -26,28 +26,28 @@
         movement.
       </p>
     </div>
-    <div class="flex gap-x-2">
+    <div class="flex gap-x-2" @click="openGallery(GALLERY_TYPES.brands)">
       <div class="flex-1/3 flex flex-col gap-y-2">
         <img :src="portraitImg3" alt="" />
       </div>
       <div class="flex-2/3 flex">
         <div class="w-2/5 flex flex-col gap-y-2">
           <img :src="portraitImg4" alt="" />
-          <button class="flex flex-col items-start" @click="openGallery(GALLERY_TYPES.brands)">
+          <div class="flex flex-col items-start">
             <span class="text-sm uppercase text-nowrap">FOR BRANDS</span>
             <ArrowShortIcon class="h-4 w-4 rotate-180" />
-          </button>
+          </div>
         </div>
       </div>
     </div>
-    <div class="flex gap-x-1">
+    <div class="flex gap-x-1" @click="openGallery(GALLERY_TYPES.creative)">
       <div class="flex-3/5 flex">
         <div class="flex-2/5"></div>
         <div class="flex-3/5 flex flex-col justify-end gap-y-2">
-          <button class="flex flex-col items-end" @click="openGallery(GALLERY_TYPES.creative)">
+          <div class="flex flex-col items-end">
             <span class="text-sm uppercase">CREATIVE/STUDIO</span>
             <ArrowWideIcon class="h-4 w-8" />
-          </button>
+          </div>
           <img :src="portraitImg6" alt="" />
         </div>
       </div>

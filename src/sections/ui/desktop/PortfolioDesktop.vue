@@ -8,7 +8,7 @@
           voice. I believe in authentic light, cinematic frames, and content that feels real.
         </p>
         <div class="py-6 lg:py-32 2xl:py-62">
-          <div class="grid grid-cols-2 gap-x-2">
+          <div class="grid grid-cols-2 gap-x-2 cursor-pointer group" @click="openGallery(GALLERY_TYPES.brands)">
             <div class="pt-28 flex flex-col gap-y-4 md:gap-y-6">
               <img :src="portraitImg3" alt="" />
               <p class="section-text">
@@ -19,13 +19,10 @@
             <div>
               <img :src="portraitImg4" alt="" />
               <div class="xl:pt-30 grow flex justify-start items-center">
-                <button
-                  class="flex flex-col items-start transition-opacity hover:opacity-70"
-                  @click="openGallery(GALLERY_TYPES.brands)"
-                >
+                <div class="flex flex-col items-start transition-opacity group-hover:opacity-70">
                   <ArrowShortIcon class="h-10 w-10 rotate-180" />
                   <span class="portfolio-section-subtle leading-6">FOR BRANDS</span>
-                </button>
+                </div>
               </div>
             </div>
           </div>
@@ -41,37 +38,36 @@
         </div>
       </article>
       <article class="flex flex-col-reverse md:flex-col items-center">
-        <div class="flex gap-x-4">
+        <div class="flex gap-x-4 cursor-pointer group" @click="openGallery(GALLERY_TYPES.portraits)">
           <div class="flex flex-col">
             <img :src="portraitImg1" alt="" />
             <div class="xl:pt-40 grow flex justify-end items-center">
-              <button
-                class="flex flex-col items-end transition-opacity hover:opacity-70"
-                @click="openGallery(GALLERY_TYPES.portraits)"
-              >
+              <div class="flex flex-col items-end transition-opacity group-hover:opacity-70">
                 <span class="portfolio-section-subtle leading-6">PORTRAITS</span>
                 <ArrowWideIcon class="h-10 w-20" />
-              </button>
+              </div>
             </div>
           </div>
           <div>
             <img :src="portraitImg2" alt="" />
           </div>
         </div>
-        <div class="py-4 md:py-12 lg:py-34 flex gap-x-4">
+        <div
+          class="py-4 md:py-12 lg:py-34 flex gap-x-4 cursor-pointer group"
+          @click="openGallery(GALLERY_TYPES.creative)"
+        >
           <div class="flex flex-col">
             <img :src="portraitImg6" alt="" />
             <div class="grow flex justify-end items-center">
-              <button
-                class="flex flex-col items-start md:gap-y-2 portfolio-section-subtle leading-6 transition-opacity hover:opacity-70"
-                @click="openGallery(GALLERY_TYPES.creative)"
+              <div
+                class="flex flex-col items-start md:gap-y-2 portfolio-section-subtle leading-6 transition-opacity group-hover:opacity-70"
               >
                 <span class="">CREATIVE/</span>
                 <div class="flex items-center">
                   <span>STUDIO</span>
                   <ArrowWideIcon class="h-10 w-20" />
                 </div>
-              </button>
+              </div>
             </div>
           </div>
           <div>
